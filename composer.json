@@ -28,7 +28,18 @@
         "symfony/yaml": "5.1.*"
     },
     "require-dev": {
+        "hautelook/alice-bundle": "dev-allow_persistence",
+        "symfony/browser-kit": "5.1.*",
+        "symfony/http-client": "5.1.*",
+        "symfony/maker-bundle": "dev-master",
+        "symfony/phpunit-bridge": "^5.2@dev"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/franmomu/AliceBundle"
+        }
+    ],
     "config": {
         "optimize-autoloader": true,
         "preferred-install": {
@@ -75,5 +86,6 @@
             "allow-contrib": false,
             "require": "5.1.*"
         }
-    }
+    },
+    "minimum-stability": "dev"
 }
