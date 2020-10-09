@@ -1,0 +1,21 @@
+<?php
+
+$container->loadFromExtension('security', [
+    'providers' => [
+        'users_in_memory' => [
+            'memory' => null
+        ]
+    ],
+    'firewalls' => [
+        'dev' => [
+            'pattern' => '^/(_(profiler|wdt)|css|images|js)/',
+            'security' => false
+        ],
+        'main' => [
+            'anonymous' => true,
+            'lazy' => true,
+            'provider' => 'users_in_memory'
+        ]
+    ],
+    'access_control' => []
+]);
