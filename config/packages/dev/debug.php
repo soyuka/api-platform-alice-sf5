@@ -11,6 +11,6 @@
 
 declare(strict_types=1);
 
-$container->loadFromExtension('nelmio_alice', [
-    'functions_blacklist' => ['current', 'shuffle', 'date', 'time', 'file', 'md5', 'sha1'],
+$container->loadFromExtension('debug', [
+    'dump_destination' => 'tcp://%env(VAR_DUMPER_SERVER)%',
 ]);

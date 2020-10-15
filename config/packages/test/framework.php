@@ -1,9 +1,20 @@
 <?php
 
+/*
+ * This file is part of the API Platform By Examples project.
+ *
+ * (c) Antoine Bluchet <soyuka@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+declare(strict_types=1);
+
 $container->loadFromExtension('framework', [
     'test' => true,
     'session' => [
-        'storage_id' => 'session.storage.mock_file'
+        'storage_id' => 'session.storage.mock_file',
     ],
-    'validation' => ['not_compromised_password' => false]
+    'validation' => ['not_compromised_password' => false],
 ]);

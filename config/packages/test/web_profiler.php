@@ -11,18 +11,11 @@
 
 declare(strict_types=1);
 
+$container->loadFromExtension('web_profiler', [
+    'toolbar' => false,
+    'intercept_redirects' => false,
+]);
+
 $container->loadFromExtension('framework', [
-    'secret' => '%env(APP_SECRET)%',
-    'session' => [
-        'handler_id' => null,
-        'cookie_secure' => 'auto',
-        'cookie_samesite' => 'lax',
-    ],
-    'php_errors' => [
-        'log' => true,
-    ],
-    'router' => ['utf8' => true],
-    'validation' => [
-        'email_validation_mode' => 'html5',
-    ],
+    'profiler' => ['collect' => false],
 ]);

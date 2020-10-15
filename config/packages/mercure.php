@@ -10,7 +10,12 @@
  */
 
 declare(strict_types=1);
-
-$container->loadFromExtension('nelmio_alice', [
-    'functions_blacklist' => ['current', 'shuffle', 'date', 'time', 'file', 'md5', 'sha1'],
+$container->loadFromExtension('mercure', [
+    'enable_profiler' => '%kernel.debug%',
+    'hubs' => [
+        'default' => [
+            'url' => '%env(MERCURE_PUBLISH_URL)%',
+            'jwt' => '%env(MERCURE_JWT_TOKEN)%',
+        ],
+    ],
 ]);
