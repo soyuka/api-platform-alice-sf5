@@ -1,0 +1,33 @@
+#!/usr/bin/env php
+<?php
+
+use App\Kernel;
+use Symfony\Component\Dotenv\Dotenv;
+use Symfony\Component\ErrorHandler\Debug;
+use Symfony\Component\HttpFoundation\Request;
+
+require dirname(__DIR__).'/vendor/autoload.php';
+
+function ApiPlatform(string $url) {
+  $_SERVER = [
+    'APP_ENV' => 'dev',
+    'APP_DEBUG' => true,
+    'DOCUMENT_ROOT' => '/',
+    'DATABASE_URL' => 'sqlite:///%kernel.project_dir%/var/data.db',
+    'APP_SECRET' => 's3cr3t'
+  ];
+
+  $kernel = new Kernel($_SERVER['APP_ENV'], (bool) $_SERVER['APP_DEBUG']);
+
+  $request = Request::create($url, 'GET');
+  $response = $kernel->handle($request);
+  $response->send();
+
+  echo json_encode([
+      'status' => $response->getStatusCode(),
+      'content' => $response->getContent(),
+      'headers' => $response->headers->all(),
+  ]);
+
+  $kernel->terminate($request, $response);
+}

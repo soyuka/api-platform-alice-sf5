@@ -152,18 +152,6 @@
             "config/packages/test/nelmio_alice.yaml"
         ]
     },
-    "nelmio/cors-bundle": {
-        "version": "1.5",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "1.5",
-            "ref": "6388de23860284db9acce0a7a5d9d13153bcb571"
-        },
-        "files": [
-            "config/packages/nelmio_cors.yaml"
-        ]
-    },
     "nikic/php-parser": {
         "version": "v4.10.2"
     },
@@ -336,21 +324,6 @@
             "version": "1.0",
             "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
         }
-    },
-    "symfony/mercure": {
-        "version": "v0.4.0"
-    },
-    "symfony/mercure-bundle": {
-        "version": "0.2",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "0.2",
-            "ref": "a37d3438e4bd4f9f924c516996bc29e25f66b07e"
-        },
-        "files": [
-            "config/packages/mercure.yaml"
-        ]
     },
     "symfony/monolog-bridge": {
         "version": "5.1.x-dev"
