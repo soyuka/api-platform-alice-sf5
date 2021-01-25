@@ -25,7 +25,7 @@ final class CarSlugIdentifierDenormalizer implements DenormalizerInterface, Cach
      */
     public function denormalize($data, $class, $format = null, array $context = []): string
     {
-        return $data;
+        return '1';
     }
 
     /**
@@ -33,7 +33,7 @@ final class CarSlugIdentifierDenormalizer implements DenormalizerInterface, Cach
      */
     public function supportsDenormalization($data, $type, $format = null): bool
     {
-        return Type::BUILTIN_TYPE_INT === $type && \is_string($data) && !is_numeric($data);
+        return $data === 'me';
     }
 
     /**
