@@ -8,6 +8,8 @@ git clone https://github.com/soyuka/api-platform-alice-sf5 --single-branch --bra
 cd api-platform-product-category-example
 composer install
 symfony server:start
+bin/console doctrine:schema:create
+bin/console hautelook:fixtures:load
 ```
 
 Go to /api/products.jsonld?perPage=100 then watch the profiler.
