@@ -13,7 +13,9 @@ declare(strict_types=1);
 
 namespace Symfony\Component\DependencyInjection\Loader\Configurator;
 
+use App\DataProvider\ProductDataProvider;
 use App\IdentifierNormalizer\CarSlugIdentifierDenormalizer;
+use App\Extension\CategoryFilterExtension;
 
 return function (ContainerConfigurator $configurator): void {
     $parameters = $configurator->parameters();
@@ -26,7 +28,10 @@ return function (ContainerConfigurator $configurator): void {
     $services->load('App\\', '../src/*')
         ->exclude('../src/{DependencyInjection,Entity,Tests,Kernel.php}');
 
-    $services->set('api_platform.identifier.integer', CarSlugIdentifierDenormalizer::class);
-    $services->get(CarSlugIdentifierDenormalizer::class)
-        ->tag('api_platform.identifier.denormalizer');
+    $services->set(ProductDataProvider::class)
+        ->tag('api_platform.collection_data_provider', ['priority' => 20])
+        ->arg('$decorated', service('esql.api_platform.default.collection_data_provider'));
+
+    $services->set(CategoryFilterExtension::class)
+        ->tag('esql.collection_extension');
 };

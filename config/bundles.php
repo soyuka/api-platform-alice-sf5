@@ -27,4 +27,6 @@ return [
     Symfony\Bundle\MonologBundle\MonologBundle::class => ['all' => true],
     Symfony\Bundle\DebugBundle\DebugBundle::class => ['dev' => true, 'test' => true],
     Symfony\Bundle\MercureBundle\MercureBundle::class => ['all' => true],
+    Jane\AutoMapper\Bundle\JaneAutoMapperBundle::class => ['all' => true],
+    Soyuka\ESQL\Bridge\Symfony\Bundle\ESQLBundle::class => ['all' => true],
 ];

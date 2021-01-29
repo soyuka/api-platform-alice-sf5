@@ -121,6 +121,12 @@
             "fixtures/.gitignore"
         ]
     },
+    "jane-php/automapper": {
+        "version": "v6.3.2"
+    },
+    "jms/parser-lib": {
+        "version": "1.0.0"
+    },
     "justinrainbow/json-schema": {
         "version": "5.x-dev"
     },
@@ -182,6 +188,12 @@
     "phpdocumentor/type-resolver": {
         "version": "1.4.0"
     },
+    "phpmyadmin/sql-parser": {
+        "version": "5.4.1"
+    },
+    "phpoption/phpoption": {
+        "version": "1.7.5"
+    },
     "psr/cache": {
         "version": "1.0.1"
     },
@@ -208,6 +220,9 @@
     },
     "sebastian/recursion-context": {
         "version": "4.0-dev"
+    },
+    "soyuka/esql": {
+        "version": "v1.0.0-alpha.2"
     },
     "symfony/asset": {
         "version": "v5.1.7"
