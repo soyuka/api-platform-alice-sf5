@@ -403,6 +403,9 @@
     "symfony/polyfill-php80": {
         "version": "v1.18.1"
     },
+    "symfony/polyfill-uuid": {
+        "version": "v1.22.0"
+    },
     "symfony/profiler-pack": {
         "version": "dev-master"
     },
@@ -411,6 +414,9 @@
     },
     "symfony/property-info": {
         "version": "v5.1.7"
+    },
+    "symfony/proxy-manager-bridge": {
+        "version": "v5.1.11"
     },
     "symfony/routing": {
         "version": "5.1",
@@ -484,6 +490,9 @@
             "config/packages/twig.yaml",
             "templates/base.html.twig"
         ]
+    },
+    "symfony/uid": {
+        "version": "v5.1.11"
     },
     "symfony/validator": {
         "version": "4.3",

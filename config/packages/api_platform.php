@@ -21,4 +21,10 @@ $container->loadFromExtension('api_platform', [
     'swagger' => [
         'versions' => [3],
     ],
+    'collection' => [
+        'pagination' => [
+            'client_items_per_page' => true,
+            'items_per_page_parameter_name' => 'perPage'
+        ]
+    ]
 ]);

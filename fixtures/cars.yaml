@@ -1,3 +1,0 @@
-App\Entity\Car:
-    car_{1..10}:
-        name: <name()>
