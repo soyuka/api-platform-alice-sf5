@@ -25,8 +25,4 @@ return function (ContainerConfigurator $configurator): void {
 
     $services->load('App\\', '../src/*')
         ->exclude('../src/{DependencyInjection,Entity,Tests,Kernel.php}');
-
-    $services->set('api_platform.identifier.integer', CarSlugIdentifierDenormalizer::class);
-    $services->get(CarSlugIdentifierDenormalizer::class)
-        ->tag('api_platform.identifier.denormalizer');
 };

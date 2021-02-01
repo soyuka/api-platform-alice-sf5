@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ApiResource()
- * @ORM\Entity(repositoryClass=CarRepository::class)
+ * @ORM\Entity()
  */
 class Car
 {
