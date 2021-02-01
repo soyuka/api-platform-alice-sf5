@@ -13,7 +13,9 @@ declare(strict_types=1);
 
 namespace Symfony\Component\DependencyInjection\Loader\Configurator;
 
+use App\Dto\SomeInput;
 use App\IdentifierNormalizer\CarSlugIdentifierDenormalizer;
+use App\MessageHandler\CarInputHandler;
 
 return function (ContainerConfigurator $configurator): void {
     $parameters = $configurator->parameters();
@@ -25,4 +27,6 @@ return function (ContainerConfigurator $configurator): void {
 
     $services->load('App\\', '../src/*')
         ->exclude('../src/{DependencyInjection,Entity,Tests,Kernel.php}');
+
+    $services->set(CarInputHandler::class);
 };
