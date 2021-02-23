@@ -16,6 +16,7 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
 use App\Dto\SomeInput;
 use App\IdentifierNormalizer\CarSlugIdentifierDenormalizer;
 use App\MessageHandler\CarInputHandler;
+use Symfony\Component\Serializer\NameConverter\CamelCaseToSnakeCaseNameConverter;
 
 return function (ContainerConfigurator $configurator): void {
     $parameters = $configurator->parameters();
@@ -29,4 +30,5 @@ return function (ContainerConfigurator $configurator): void {
         ->exclude('../src/{DependencyInjection,Entity,Tests,Kernel.php}');
 
     $services->set(CarInputHandler::class);
+    $services->set(CamelCaseToSnakeCaseNameConverter::class);
 };

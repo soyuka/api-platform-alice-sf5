@@ -11,6 +11,8 @@
 
 declare(strict_types=1);
 
+use Symfony\Component\Serializer\NameConverter\CamelCaseToSnakeCaseNameConverter;
+
 $container->loadFromExtension('api_platform', [
     'mapping' => [
         'paths' => ['%kernel.project_dir%/src/Entity'],
@@ -21,4 +23,5 @@ $container->loadFromExtension('api_platform', [
     'swagger' => [
         'versions' => [3],
     ],
+    'name_converter' => CamelCaseToSnakeCaseNameConverter::class
 ]);
